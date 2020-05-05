@@ -97,8 +97,18 @@ section{
     color:#4760f961;
     font-weight: 600;
 }
-.check{
+.action{
     float: right;
+}
+.delete{
+    color: #fff;
+    padding:  4px 5px 4px 8px;;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: rgb(240, 56, 56);
+}
+.check{
+    margin-left: 20px;
     padding: 2px 7px;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -109,11 +119,71 @@ section{
     color: rgb(204, 201, 201);
     /* background:#3b50d4b3 ; */
 }
+dialog{
+    border: none;
+    padding: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+    background: #7584E1;
+    color: #fff;
+}
+.close_dialog{
+    float: right;
+    height: 25px;
+    width: 25px;
+}
+.add-task{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.dialog_text{
+    margin: 50px auto;
+    padding: 10px 30px;
+}
+input{
+    border: none;
+    border-bottom: 1px solid #5862A6;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+::placeholder {
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+input:focus{
+    border: none;
+    outline: none
+}
+.btn{
+    width: 100%;
+    padding: 10px 0;
+    background: #d8dcf98c;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.btn:hover{
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
+   
+}
 
 @media screen and (max-width:600px){
     .container{
         margin:0 auto;
         width: 100%;
         /* padding: 20px; */
+    }
+    .todo-time{
+        margin-right: 30px;
+    }
+    dialog{
+        margin: 0 auto;
     }
 }

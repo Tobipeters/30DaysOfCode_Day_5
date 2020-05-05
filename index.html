@@ -11,7 +11,7 @@
     <title>30DaysOfCode | Simple Todo App </title>
 </head>
 
-<body>
+<body onload="allTasks()">
     <div class="container">
         <header>
             <h3 class="title">Todo App</h3>
@@ -23,42 +23,72 @@
                 <small> June, 2020</small>
             </div>
             <div class="add-cont">
-                <span class="add"> + </span>
+                <span class="add" onclick="toggle()"> + </span>
             </div>
         </header>
         <section>
             <div class="list">
+                <small class="todo-time" id="get-time"> 6 am</small>
+                <div class="todo">
+                    <p class="todo-title" id="get-title"> Wake up </p>
+                    <!-- <small class="todo-desc">Waking up in the might of the lord</small> -->
+                </div>
+                <div class="action">
+                    <span class="delete">
+                        &#10006;
+                    </span>
+                    <span class="check">
+                        &#10004;
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="list">
                 <small class="todo-time"> 6 am</small>
                 <div class="todo">
                     <p class="todo-title"> Wake up </p>
-                    <!-- <small class="todo-desc">Waking up in the might of the lord</small> -->
                 </div>
-                <span class="check">
-                    &#10004;
-                </span>
-            </div>
-            <div class="list">
+                <div class="action">
+                    <span class="delete">
+                        &#10006;
+                    </span>
+                    <span class="check">
+                        &#10004;
+                    </span>
+                </div>
+            </div> -->
+            <!-- <div class="list">
                 <small class="todo-time"> 6 am</small>
                 <div class="todo">
                     <p class="todo-title"> Wake up </p>
-                    <!-- <small class="todo-desc">Waking up in the might of the lord</small> -->
                 </div>
-                <span class="check">
-                    &#10004;
-                </span>
-            </div>
-            <div class="list">
-                <small class="todo-time"> 6 am</small>
-                <div class="todo">
-                    <p class="todo-title"> Wake up </p>
-                    <!-- <small class="todo-desc">Waking up in the might of the lord</small> -->
+                <div class="action">
+                    <span class="delete">
+                        &#10006;
+                    </span>
+                    <span class="check">
+                        &#10004;
+                    </span>
                 </div>
-                <span class="check">
-                    &#10004;
-                </span>
-            </div>
+            </div> -->
         </section>
     </div>
+
+    <dialog id="dialog_box">
+        <img src="close.png" alt="close" class="close_dialog" onclick="closeModal()">
+        <div class="dialog_text">
+            <h3 class="add-task">Add New Task</h3>
+            <form>
+                <div>
+                    <input type="text" placeholder="What is to be done?" id="task">
+                </div>
+                <div>
+                    <input type="time" placeholder="Enter Task time" id="time">
+                </div>
+                <button type="button" class="btn" onclick="addTask()">ADD TASK</button>
+            </form>
+        </div>
+
+    </dialog>
 </body>
 
 </html>
