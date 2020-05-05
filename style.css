@@ -1,0 +1,119 @@
+body{
+    position: relative;
+    margin: 0;
+    padding: 0; 
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    /* background: url('images/background.jpg') no-repeat center fixed;
+    background-size: cover; */
+}
+p{
+    margin: 0;
+}
+.container{
+    border: 1px solid #F1F1F1;
+    margin: 30px auto;
+    width: 50%;
+    height: 600px;
+
+    /* padding: 30px; */
+}
+header{
+    /* border-bottom: 1px solid black; */
+    padding: 15px;
+    background: #3b50d4b3;
+    color: #fff;
+    position: relative;
+}
+.title{
+    text-align: center;
+}
+.time-cont{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.day-no-cont{
+    padding: 7px;
+    display: inline-block;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    background: #d8dcf98c;
+}
+.day-no{
+    padding: 25px;
+    /* border: 1px solid rgb(107, 106, 106); */
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 600;
+    background: #3b50d4b3 ;
+}
+.day{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+.add-cont{
+    display: inline-block;
+}
+.add{
+    color: #fff;
+    padding:11px 20px;
+    border-radius: 50%;
+    background: rgb(240, 56, 56);
+    box-shadow: 0 6px 12px 0 rgba(234, 27, 27, 0.54);
+    transition: 0.3s;
+    font-size: 28px;
+    font-weight: 900;
+    position: absolute;
+    right: 40px;
+    bottom: -27px;
+}
+section{
+    margin: 65px auto 30px;
+    padding: 0 30px;
+}
+.list{
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.todo{
+    display: inline-block;
+    vertical-align: middle;
+}
+.todo-time{
+    margin-right: 60px;
+    color: #3b50d4b3;
+    font-weight: 600;
+}
+.todo-title{
+    display: inline;
+    color: #3b50d4b3;
+    font-weight: 600;
+}
+.todo-desc{
+    display: block;
+    color:#4760f961;
+    font-weight: 600;
+}
+.check{
+    float: right;
+    padding: 2px 7px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /* when task isn't done yet */
+  background: #fff;
+    /* when task is done */
+    color: rgb(204, 201, 201);
+    /* background:#3b50d4b3 ; */
+}
+
+@media screen and (max-width:600px){
+    .container{
+        margin:0 auto;
+        width: 100%;
+        /* padding: 20px; */
+    }
+}
