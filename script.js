@@ -29,29 +29,6 @@ monthAndYear.innerHTML = `${month} ${year}`
 // }
 
 // initialLoad();
-addTask = () =>{
-    let taskName = document.getElementById('task').value;
-    let taskTime = document.getElementById('time').value;
-    const listOfTask = {
-        task: taskName,
-        time: taskTime
-    }
-    taskHolder.push(listOfTask);
-    localStorage.task = JSON.stringify(taskHolder);
-    displayTask();
-}
-
-displayTask = () =>{
-    let task = []
-    allTasks = JSON.parse(localStorage.task)
-   console.log(allTasks)
-}
-displayTask();
-
-deletTask =>{
-
-}
-
 
 toggle = () => {
     let dialog = document.getElementById('dialog_box');
@@ -62,3 +39,38 @@ closeModal = () => {
     let dialog = document.getElementById('dialog_box');
     dialog.close();
 }
+
+
+addTask = () =>{
+    let taskName = document.getElementById('task').value;
+    let taskTime = document.getElementById('time').value;
+    const listOfTask = {
+        task: taskName,
+        time: taskTime
+    }
+    taskHolder.push(listOfTask);
+    localStorage.task = JSON.stringify(taskHolder);
+    closeModal();
+}
+
+displayTask = () =>{
+    let allTasks = JSON.parse(localStorage.task);
+    
+   console.log(allTasks)
+  for (let i = 0; i < allTasks.length; i++) {
+      const element = allTasks[i];
+      console.log(element)
+      let time = getTime.innerHTML = element.time;
+      let task = getTitle.innerHTML = element.task
+      list.append(time, task)
+    
+  }
+
+}
+displayTask();
+
+deletTask =>{
+    localStorage.removeItem()
+}
+
+
