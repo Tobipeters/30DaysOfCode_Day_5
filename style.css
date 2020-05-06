@@ -10,7 +10,7 @@ body{
 p{
     margin: 0;
 }
-.container{
+.container{ 
     border: 1px solid #F1F1F1;
     margin: 30px auto;
     width: 50%;
@@ -30,7 +30,6 @@ header{
 }
 .time-cont{
     text-align: center;
-    margin-bottom: 20px;
 }
 .day-no-cont{
     padding: 7px;
@@ -40,10 +39,11 @@ header{
     background: #d8dcf98c;
 }
 .day-no{
-    padding: 25px;
-    /* border: 1px solid rgb(107, 106, 106); */
+    width: 50px;
+    height: 50px;
+    padding: 30px 30px 15px;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     background: #3b50d4b3 ;
 }
