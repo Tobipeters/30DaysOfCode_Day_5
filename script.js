@@ -16,6 +16,8 @@ dayNumber.innerHTML = date.getDate();
 day.innerHTML = days[date.getDay()];
 monthAndYear.innerHTML = `${month} ${year}`
 
+let allTasks = JSON.parse(localStorage.getItem('task'));
+
 //load initial storage items
 // initialLoad = () =>{
 //     if (taskHolder.length <= 0 && localStorage.task ){
@@ -41,6 +43,13 @@ closeModal = () => {
 }
 
 
+deleteTask = (title) =>{
+    console.log(allTasks)
+    localStorage.removeItem('task'[title]);
+    displayTask();
+  }
+  
+
 addTask = () =>{
     let taskName = document.getElementById('task').value;
     let taskTime = document.getElementById('time').value;
@@ -49,28 +58,40 @@ addTask = () =>{
         time: taskTime
     }
     taskHolder.push(listOfTask);
-    localStorage.task = JSON.stringify(taskHolder);
+    localStorage.setItem('task', JSON.stringify(taskHolder));
+    displayTask();
     closeModal();
 }
 
 displayTask = () =>{
-    let allTasks = JSON.parse(localStorage.task);
-    
+  
+    let  section = document.querySelector('section')
+    let innerHTmL = ''
    console.log(allTasks)
   for (let i = 0; i < allTasks.length; i++) {
-      const element = allTasks[i];
-      console.log(element)
-      let time = getTime.innerHTML = element.time;
-      let task = getTitle.innerHTML = element.task
-      list.append(time, task)
-    
-  }
+  
+    const element = allTasks[i];
 
+    innerHTmL += `   <div class="list" id="list">
+    <small class="todo-time" id="get-time"> ${element.time} </small>
+    <div class="todo">
+        <p class="todo-title" id="get-title"> ${element.task} </p>
+      
+    </div>
+    <div class="action">
+        <span class="delete" onclick="deleteTask(task)">
+            &#10006;
+        </span>
+        <span class="check">
+            &#10004;
+        </span>
+    </div>
+</div>`
+
+  }
+  section.innerHTML =innerHTmL;
 }
 displayTask();
 
-deletTask =>{
-    localStorage.removeItem()
-}
 
 

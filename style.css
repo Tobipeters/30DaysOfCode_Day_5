@@ -11,7 +11,7 @@ p{
     margin: 0;
 }
 .container{ 
-    border: 1px solid #F1F1F1;
+    border: 1px solid #F1F1F1; 
     margin: 30px auto;
     width: 50%;
     height: 600px;
@@ -117,7 +117,11 @@ section{
   background: #fff;
     /* when task is done */
     color: rgb(204, 201, 201);
-    /* background:#3b50d4b3 ; */
+   
+}
+.checked{
+    background:rgb(41, 172, 41) ;
+    color: #fff;
 }
 dialog{
     border: none;
