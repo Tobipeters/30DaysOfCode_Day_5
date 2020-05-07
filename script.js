@@ -1,4 +1,4 @@
-
+//////Declaration of variables
 let day = document.getElementById('day');
 let dayNumber = document.getElementById('day-no');
 let monthAndYear = document.getElementById('month-and-year');
@@ -15,37 +15,10 @@ let list = document.getElementById('list');
 dayNumber.innerHTML = date.getDate();
 day.innerHTML = days[date.getDay()];
 monthAndYear.innerHTML = `${month}, ${year}`
-
-
-
 let allTasks = JSON.parse(localStorage.getItem('task'));;
-//load initial storage items
-// initialLoad = () =>{
-//     if (taskHolder.length <= 0 && localStorage.task ){
-//         console.log(localStorage.task);
-//         taskHolder.JSON.parse(localStorage.task);
-//         const items = taskHolder.map((elem)=>{
-//             list.append(...items);
-//         })
-//     }
-//     displayTask(items)
-// }
-
-// initialLoad();
-
-toggle = () => {
-    let dialog = document.getElementById('dialog_box');
-    dialog.showModal();
-}
-/////////closing modal function
-closeModal = () => {
-    let dialog = document.getElementById('dialog_box');
-    dialog.close();
-}
 
 
-
-
+///////function to  add task
 addTask = () => {
     let taskName = document.getElementById('task').value;
     let taskTime = document.getElementById('time').value;
@@ -65,6 +38,8 @@ addTask = () => {
         error();
     }
 }
+
+////////To display each task created
 
 displayTask = () => {
 
@@ -93,19 +68,34 @@ displayTask = () => {
     section.innerHTML = innerHTmL;
 }
 
+//To delete each task
 deleteTask = (i) => {
     allTasks.splice(i, 1)
     localStorage.setItem('task', JSON.stringify(allTasks))
     displayTask();
 
 }
-
+///////To check already done task
 checkedTask = (i) => {
     
     check = document.getElementById('check');
     check.classList.replace('check', 'checked')
 }
 
+////////Pop up for entering task and time 
+toggle = () => {
+    let dialog = document.getElementById('dialog_box');
+    dialog.showModal();
+}
+//////closing modal function
+closeModal = () => {
+    let dialog = document.getElementById('dialog_box');
+    dialog.close();
+}
+
+
+
+///////Eroor message when input field not filled
 error = () => {
     error = document.getElementById('error')
     error.innerHTML = 'Enter task and time'

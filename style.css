@@ -71,7 +71,7 @@ header{
     cursor: pointer;
 }
 section{
-    margin: 65px auto 30px;
+    margin: 40px auto 30px;
     padding: 0 30px;
 }
 .list{
@@ -216,8 +216,11 @@ input:focus{
         width: 37px;
     }
     .todo-title{
-        width: 180px;
+        width: 185px;
         display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden
     }
     .add{
         right: 15px;
@@ -231,5 +234,14 @@ input:focus{
     dialog{
         margin: 0 auto;
         width: 300px;
+    }
+}
+@media screen and (max-width:350px){
+    .todo-title{
+        width: 130px;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden
     }
 }
