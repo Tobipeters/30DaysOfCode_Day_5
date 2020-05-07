@@ -2,7 +2,7 @@ let taskHolder = [];
 let day = document.getElementById('day');
 let dayNumber = document.getElementById('day-no');
 let monthAndYear = document.getElementById('month-and-year');
-let date = new Date ;
+let date = new Date;
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let month = months[date.getMonth()]
@@ -14,10 +14,11 @@ let list = document.getElementById('list');
 
 dayNumber.innerHTML = date.getDate();
 day.innerHTML = days[date.getDay()];
-monthAndYear.innerHTML = `${month} ${year}`
+monthAndYear.innerHTML = `${month}, ${year}`
 
-let allTasks = JSON.parse(localStorage.getItem('task'));
 
+
+let allTasks = JSON.parse(localStorage.getItem('task'));;
 //load initial storage items
 // initialLoad = () =>{
 //     if (taskHolder.length <= 0 && localStorage.task ){
@@ -43,14 +44,9 @@ closeModal = () => {
 }
 
 
-deleteTask = (title) =>{
-    console.log(allTasks)
-    localStorage.removeItem('task'[title]);
-    displayTask();
-  }
-  
 
-addTask = () =>{
+
+addTask = () => {
     let taskName = document.getElementById('task').value;
     let taskTime = document.getElementById('time').value;
     const listOfTask = {
@@ -59,27 +55,27 @@ addTask = () =>{
     }
     taskHolder.push(listOfTask);
     localStorage.setItem('task', JSON.stringify(taskHolder));
+
     displayTask();
     closeModal();
 }
 
-displayTask = () =>{
+displayTask = () => {
   
-    let  section = document.querySelector('section')
+    let section = document.querySelector('section')
     let innerHTmL = ''
-   console.log(allTasks)
-  for (let i = 0; i < allTasks.length; i++) {
-  
-    const element = allTasks[i];
+    console.log(allTasks)
+    for (let i = 0; i < allTasks.length; i++) {
+        const element = allTasks[i];
 
-    innerHTmL += `   <div class="list" id="list">
+        innerHTmL += `  <div class="list" id="list">
     <small class="todo-time" id="get-time"> ${element.time} </small>
     <div class="todo">
         <p class="todo-title" id="get-title"> ${element.task} </p>
       
     </div>
     <div class="action">
-        <span class="delete" onclick="deleteTask(task)">
+        <span class="delete" onclick="deleteTask(${i})">
             &#10006;
         </span>
         <span class="check">
@@ -87,11 +83,18 @@ displayTask = () =>{
         </span>
     </div>
 </div>`
-
-  }
-  section.innerHTML =innerHTmL;
+    }
+    section.innerHTML = innerHTmL;
 }
-displayTask();
+
+deleteTask = (i) => {
+ allTasks.splice(i, 1)
+ localStorage.setItem('task', JSON.stringify(allTasks))
+  displayTask();
+
+}
+
+
 
 
 
