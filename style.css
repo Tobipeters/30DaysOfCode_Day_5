@@ -239,7 +239,7 @@ input:focus{
         font-size: 10px;
         padding: 3px 4px 3px 6px;
     }
-    .check{
+    .check, .checked{
         font-size: 10px;
         padding: 2px 5px;
         margin-left: 10px;
