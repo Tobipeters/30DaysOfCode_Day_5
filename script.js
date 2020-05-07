@@ -84,7 +84,7 @@ displayTask = () => {
         <span class="delete" onclick="deleteTask(${i})">
             &#10006;
         </span>
-        <span class="check" id="check" onclick="checkedTask()">
+        <span class="check" id="check" onchange="checkedTask(${i})">
             &#10004;
         </span>
     </div>
