@@ -99,6 +99,10 @@ section{
     color:#4760f961;
     font-weight: 600;
 }
+#time:before {
+    content:'Time:';
+    color:#fff;
+    }
 .action{
     float: right;
 }
@@ -197,6 +201,7 @@ input:focus{
     border-radius: 10px;
     margin-bottom: 30px;
     display: none;
+    font-weight:600;
 }
 
 @media screen and (max-width:600px){
@@ -206,7 +211,7 @@ input:focus{
         /* padding: 20px; */
     }
     .todo-time{
-        margin-right: 20px;
+        margin-right: 10px;
         display: inline-block;
         width: 37px;
     }
@@ -217,11 +222,14 @@ input:focus{
     .add{
         right: 15px;
     }
+    .list{
+        padding: 10px;
+    }
     section{
-        padding: 0 15px;
+        padding: 0 10px;
     }
     dialog{
         margin: 0 auto;
-        width: 350px;
+        width: 300px;
     }
 }
