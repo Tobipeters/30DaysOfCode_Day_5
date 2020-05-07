@@ -84,7 +84,7 @@ displayTask = () => {
         <span class="delete" onclick="deleteTask(${i})">
             &#10006;
         </span>
-        <span class="check" id="check" onchange="checkedTask(${i})">
+        <span class="check" id="check" onclick="checkedTask(${i})">
             &#10004;
         </span>
     </div>
@@ -100,7 +100,8 @@ deleteTask = (i) => {
 
 }
 
-checkedTask = () => {
+checkedTask = (i) => {
+    
     check = document.getElementById('check');
     check.classList.replace('check', 'checked')
 }
