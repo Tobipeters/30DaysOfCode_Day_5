@@ -15,7 +15,8 @@ let list = document.getElementById('list');
 dayNumber.innerHTML = date.getDate();
 day.innerHTML = days[date.getDay()];
 monthAndYear.innerHTML = `${month}, ${year}`
-let taskHolder = []
+let taskHolder = [];
+
 
 
 ////////Pop up for entering task and time 
@@ -59,9 +60,11 @@ displayTask = () => {
     
     allTasks = JSON.parse(localStorage.getItem('task'));;
     let section = document.querySelector('section')
+    let addText = document.getElementById('empty-note');
     let innerHTmL = ''
     console.log(allTasks)
-   
+    // addText.style.display = 'block';
+   if (allTasks !== null){
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
 
@@ -83,7 +86,10 @@ displayTask = () => {
     }
     section.innerHTML = innerHTmL;
 }
-
+else{
+    addText.style.display = 'block';
+}
+}
 //Checking localStorage
 // noLocalStorage = () =>{
 //     let addText = document.getElementById('empty-text');
