@@ -216,7 +216,7 @@ input:focus{
         width: 37px;
     }
     .todo-title{
-        width: 185px;
+        width: 200px;
         display: block;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -234,6 +234,15 @@ input:focus{
     dialog{
         margin: 0 auto;
         width: 300px;
+    }
+    .delete{
+        font-size: 10px;
+        padding: 3px 4px 3px 6px;
+    }
+    .check{
+        font-size: 10px;
+        padding: 2px 5px;
+        margin-left: 10px;
     }
 }
 @media screen and (max-width:350px){

@@ -17,6 +17,17 @@ day.innerHTML = days[date.getDay()];
 monthAndYear.innerHTML = `${month}, ${year}`
 let allTasks = JSON.parse(localStorage.getItem('task'));;
 
+////////Pop up for entering task and time 
+toggle = () => {
+    let dialog = document.getElementById('dialog_box');
+    dialog.showModal();
+}
+//////closing modal function
+closeModal = () => {
+    let dialog = document.getElementById('dialog_box');
+    dialog.close();
+}
+
 
 ///////function to  add task
 addTask = () => {
@@ -80,17 +91,6 @@ checkedTask = (i) => {
     
     check = document.getElementById('check');
     check.classList.replace('check', 'checked')
-}
-
-////////Pop up for entering task and time 
-toggle = () => {
-    let dialog = document.getElementById('dialog_box');
-    dialog.showModal();
-}
-//////closing modal function
-closeModal = () => {
-    let dialog = document.getElementById('dialog_box');
-    dialog.close();
 }
 
 
