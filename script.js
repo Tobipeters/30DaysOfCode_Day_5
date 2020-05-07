@@ -15,7 +15,8 @@ let list = document.getElementById('list');
 dayNumber.innerHTML = date.getDate();
 day.innerHTML = days[date.getDay()];
 monthAndYear.innerHTML = `${month}, ${year}`
-let allTasks = JSON.parse(localStorage.getItem('task'));;
+let taskHolder = []
+
 
 ////////Pop up for entering task and time 
 toggle = () => {
@@ -29,6 +30,8 @@ closeModal = () => {
 }
 
 
+
+
 ///////function to  add task
 addTask = () => {
     let taskName = document.getElementById('task').value;
@@ -39,8 +42,8 @@ addTask = () => {
             time: taskTime
         }
         console.log(listOfTask)
-        allTasks.push(listOfTask);
-        localStorage.setItem('task', JSON.stringify(allTasks));
+        taskHolder.push(listOfTask);
+        localStorage.setItem('task', JSON.stringify(taskHolder));
         taskName = '';
         taskTime = '';
         displayTask();
@@ -53,10 +56,12 @@ addTask = () => {
 ////////To display each task created
 
 displayTask = () => {
-
+    
+    allTasks = JSON.parse(localStorage.getItem('task'));;
     let section = document.querySelector('section')
     let innerHTmL = ''
     console.log(allTasks)
+   
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
 
@@ -79,18 +84,28 @@ displayTask = () => {
     section.innerHTML = innerHTmL;
 }
 
+//Checking localStorage
+// noLocalStorage = () =>{
+//     let addText = document.getElementById('empty-text');
+//     if( allTasks !== []){
+//         addText.style.display = 'none';
+//         console.log('true')
+//     }else{
+       
+//     }
+// }
+
+
+
 //To delete each task
 deleteTask = (i) => {
     allTasks.splice(i, 1)
     localStorage.setItem('task', JSON.stringify(allTasks))
     displayTask();
-
 }
 ///////To check already done task
 checkedTask = (i) => {
-    
-    check = document.getElementById('check');
-    check.classList.replace('check', 'checked')
+
 }
 
 

@@ -74,6 +74,18 @@ section{
     margin: 40px auto 30px;
     padding: 0 30px;
 }
+.cont-add-task{
+    padding: 50px 20px;
+    border: 1px solid #dedede;
+    border-radius: 50%;
+    margin: 10px;
+    display: none;
+}
+#add-task{
+    font-size: 30px;
+    text-align: center;
+    color: #dedede;
+}
 .list{
     margin-bottom: 30px;
     padding: 15px 20px;
