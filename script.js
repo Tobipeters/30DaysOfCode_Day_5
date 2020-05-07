@@ -1,4 +1,4 @@
-let taskHolder = [];
+
 let day = document.getElementById('day');
 let dayNumber = document.getElementById('day-no');
 let monthAndYear = document.getElementById('month-and-year');
@@ -53,8 +53,8 @@ addTask = () => {
         task: taskName,
         time: taskTime
     }
-    taskHolder.push(listOfTask);
-    localStorage.setItem('task', JSON.stringify(taskHolder));
+    allTasks.push(listOfTask);
+    localStorage.setItem('task', JSON.stringify(allTasks));
 
     displayTask();
     closeModal();
