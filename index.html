@@ -14,7 +14,9 @@
 <body onload="displayTask()">
     <div class="container">
         <header>
+            <div>
             <h3 class="title">Todo App</h3>
+        </div>
             <div class="time-cont">
                 <div class="day-no-cont">
                     <p class="day-no" id="day-no"></p>
@@ -52,11 +54,12 @@
         <div class="dialog_text">
             <h3 class="add-task">Add New Task</h3>
             <form>
+                <p id="error"></p>
                 <div>
-                    <input type="text" placeholder="What is to be done?" id="task">
+                    <input type="text" placeholder="What is to be done?" id="task" maxlength="20">
                 </div>
                 <div>
-                    <input type="time" placeholder="Enter Task time" id="time">
+                    <input type="time"  placeholder="Enter Task time" id="time">
                 </div>
                 <button type="button" class="btn" onclick="addTask()">ADD TASK</button>
             </form>

@@ -49,19 +49,25 @@ closeModal = () => {
 addTask = () => {
     let taskName = document.getElementById('task').value;
     let taskTime = document.getElementById('time').value;
-    const listOfTask = {
-        task: taskName,
-        time: taskTime
+    if (taskTime !== "" && taskName !== "") {
+        const listOfTask = {
+            task: taskName,
+            time: taskTime
+        }
+        console.log(listOfTask)
+        allTasks.push(listOfTask);
+        localStorage.setItem('task', JSON.stringify(allTasks));
+        taskName = '';
+        taskTime = '';
+        displayTask();
+        closeModal();
+    } else {
+        error();
     }
-    allTasks.push(listOfTask);
-    localStorage.setItem('task', JSON.stringify(allTasks));
-
-    displayTask();
-    closeModal();
 }
 
 displayTask = () => {
-  
+
     let section = document.querySelector('section')
     let innerHTmL = ''
     console.log(allTasks)
@@ -78,7 +84,7 @@ displayTask = () => {
         <span class="delete" onclick="deleteTask(${i})">
             &#10006;
         </span>
-        <span class="check">
+        <span class="check" id="check" onclick="checkedTask()">
             &#10004;
         </span>
     </div>
@@ -88,10 +94,22 @@ displayTask = () => {
 }
 
 deleteTask = (i) => {
- allTasks.splice(i, 1)
- localStorage.setItem('task', JSON.stringify(allTasks))
-  displayTask();
+    allTasks.splice(i, 1)
+    localStorage.setItem('task', JSON.stringify(allTasks))
+    displayTask();
 
+}
+
+checkedTask = () => {
+    check = document.getElementById('check');
+    check.classList.replace('check', 'checked')
+}
+
+error = () => {
+    error = document.getElementById('error')
+    error.innerHTML = 'Enter task and time'
+    //Make Error message visible
+    error.style.display = 'block'
 }
 
 
