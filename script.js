@@ -42,7 +42,7 @@ addTask = () => {
             task: taskName,
             time: taskTime
         }
-        console.log(listOfTask)
+        // console.log(listOfTask)
         taskHolder.push(listOfTask);
         localStorage.setItem('task', JSON.stringify(taskHolder));
         taskName = '';
@@ -62,7 +62,7 @@ displayTask = () => {
     let section = document.querySelector('section')
     let addText = document.getElementById('empty-note');
     let innerHTmL = ''
-    console.log(allTasks)
+    // console.log(allTasks)
     // addText.style.display = 'block';
    if (allTasks !== null){
     for (let i = 0; i < allTasks.length; i++) {
@@ -90,17 +90,6 @@ else{
     addText.style.display = 'block';
 }
 }
-//Checking localStorage
-// noLocalStorage = () =>{
-//     let addText = document.getElementById('empty-text');
-//     if( allTasks !== []){
-//         addText.style.display = 'none';
-//         console.log('true')
-//     }else{
-       
-//     }
-// }
-
 
 
 //To delete each task
